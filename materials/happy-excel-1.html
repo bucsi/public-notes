@@ -224,50 +224,90 @@ spreadsheet processor</strong>. #### General Guidelines - Perform
 remain accurate even if source data changes. - If a part relies on a
 previous step, and that step was incomplete, use a reasonable result to
 proceed and earn marks for the dependent parts. #### Step-by-Step
-Instructions ##### 1. Importing the Data - Import
-<code>results.txt</code> (UTF-8 encoded, tab-separated) into the
-spreadsheet starting from <strong>cell A1</strong>. - Save your work as
-<strong><code>robotrace</code></strong> in the spreadsheet’s default
-format. &gt; <strong>Notes:</strong> &gt; - The race includes up to four
-rounds. &gt; - A higher score is better. &gt; - In case of equal scores,
-<strong>lower time</strong> wins. &gt; - <strong>Score data</strong>:
-Range <code>A1:H26</code> &gt; - <strong>Time data</strong> (in
-seconds): Range <code>A28:G53</code> &gt; - A time value of
-<code>0</code> means the robot could not start the round. &gt; - Robots
-that could not start in <strong>any</strong> round are not included in
-the table. ##### 2. Highest Score Per Team - In <strong>range
-<code>F2:F26</code></strong>, determine the <strong>highest
-score</strong> achieved by each team. ##### 3. Total Scores and Times -
-In <strong>range <code>G2:G26</code></strong>, calculate the
-<strong>total score</strong> for each team (sum of four rounds). - In
-<strong>range <code>G29:G53</code></strong>, calculate the <strong>total
-time</strong> (in seconds) for each team (sum of four rounds). ##### 4.
-Highlight Zero Time Entries - Apply <strong>conditional
-formatting</strong> to range <code>B29:E53</code> to highlight
-<strong>cells with a value of 0</strong> using a <strong>grey
-background</strong>. ##### 5. Lowest Valid Time Per Team - In
-<strong>range <code>F29:F53</code></strong>, determine the
-<strong>lowest time</strong> per team. - <strong>Ignore 0-second
-values</strong> when calculating the minimum time. - Use a formula that
-can be <strong>copied without modification</strong>. ##### 6. Race Score
-(Top 3 Rounds Only) - In <strong>range <code>H2:H26</code></strong>,
-calculate the <strong>sum of the three highest scores</strong> (out of
-four) for each team. - Label this column as
-<strong><code>race score</code></strong>. ##### 7. Auxiliary Table for
-Final Results - In <strong>range <code>J1:M26</code></strong>, create a
-summary table: - Column <strong>K</strong>: Team names - Column
-<strong>L</strong>: Race scores - Column <strong>M</strong>: Total times
-- Use <strong>formulas</strong> to pull data into this table. Ensure
-formulas are <strong>easily copied</strong> across rows. ##### 8.
-Ranking the Teams - Sort the rows of <strong>range
-<code>J2:M26</code></strong>: - First by <strong>race score</strong>
-(descending). - Then by <strong>total time</strong> (ascending) in case
-of a tie. - The <strong>winning team</strong> should appear at the
-<strong>top</strong>. ##### 9. Count Teams by Score Threshold - In
-<strong>cell <code>O2</code></strong>, enter any <strong>race score
-value</strong>. - In <strong>cell <code>P2</code></strong>, use a
-formula to count how many teams <strong>reached or exceeded</strong> the
-race score entered in <code>O2</code>.</p>
+Instructions</p>
+<h5 id="importing-the-data">1. Importing the Data</h5>
+<ul>
+<li>Import <code>results.txt</code> (UTF-8 encoded, tab-separated) into
+the spreadsheet starting from <strong>cell A1</strong>.</li>
+<li>Save your work as <strong><code>robotrace</code></strong> in the
+spreadsheet’s default format. &gt; <strong>Notes:</strong> &gt; - The
+race includes up to four rounds. &gt; - A higher score is better. &gt; -
+In case of equal scores, <strong>lower time</strong> wins. &gt; -
+<strong>Score data</strong>: Range <code>A1:H26</code> &gt; -
+<strong>Time data</strong> (in seconds): Range <code>A28:G53</code> &gt;
+- A time value of <code>0</code> means the robot could not start the
+round. &gt; - Robots that could not start in <strong>any</strong> round
+are not included in the table.</li>
+</ul>
+<h5 id="highest-score-per-team">2. Highest Score Per Team</h5>
+<ul>
+<li>In <strong>range <code>F2:F26</code></strong>, determine the
+<strong>highest score</strong> achieved by each team.</li>
+</ul>
+<h5 id="total-scores-and-times">3. Total Scores and Times</h5>
+<ul>
+<li>In <strong>range <code>G2:G26</code></strong>, calculate the
+<strong>total score</strong> for each team (sum of four rounds).</li>
+<li>In <strong>range <code>G29:G53</code></strong>, calculate the
+<strong>total time</strong> (in seconds) for each team (sum of four
+rounds).</li>
+</ul>
+<h5 id="highlight-zero-time-entries">4. Highlight Zero Time Entries</h5>
+<ul>
+<li>Apply <strong>conditional formatting</strong> to range
+<code>B29:E53</code> to highlight <strong>cells with a value of
+0</strong> using a <strong>grey background</strong>.</li>
+</ul>
+<h5 id="lowest-valid-time-per-team">5. Lowest Valid Time Per Team</h5>
+<ul>
+<li>In <strong>range <code>F29:F53</code></strong>, determine the
+<strong>lowest time</strong> per team.</li>
+<li><strong>Ignore 0-second values</strong> when calculating the minimum
+time.</li>
+<li>Use a formula that can be <strong>copied without
+modification</strong>.</li>
+</ul>
+<h5 id="race-score-top-3-rounds-only">6. Race Score (Top 3 Rounds
+Only)</h5>
+<ul>
+<li>In <strong>range <code>H2:H26</code></strong>, calculate the
+<strong>sum of the three highest scores</strong> (out of four) for each
+team.</li>
+<li>Label this column as <strong><code>race score</code></strong>.</li>
+</ul>
+<h5 id="auxiliary-table-for-final-results">7. Auxiliary Table for Final
+Results</h5>
+<ul>
+<li>In <strong>range <code>J1:M26</code></strong>, create a summary
+table:
+<ul>
+<li>Column <strong>K</strong>: Team names</li>
+<li>Column <strong>L</strong>: Race scores</li>
+<li>Column <strong>M</strong>: Total times</li>
+</ul></li>
+<li>Use <strong>formulas</strong> to pull data into this table. Ensure
+formulas are <strong>easily copied</strong> across rows.</li>
+</ul>
+<h5 id="ranking-the-teams">8. Ranking the Teams</h5>
+<ul>
+<li>Sort the rows of <strong>range <code>J2:M26</code></strong>:
+<ul>
+<li>First by <strong>race score</strong> (descending).</li>
+<li>Then by <strong>total time</strong> (ascending) in case of a
+tie.</li>
+</ul></li>
+<li>The <strong>winning team</strong> should appear at the
+<strong>top</strong>.</li>
+</ul>
+<h5 id="count-teams-by-score-threshold">9. Count Teams by Score
+Threshold</h5>
+<ul>
+<li>In <strong>cell <code>O2</code></strong>, enter any <strong>race
+score value</strong>.</li>
+<li>In <strong>cell <code>P2</code></strong>, use a formula to count how
+many teams <strong>reached or exceeded</strong> the race score entered
+in <code>O2</code>.</li>
+</ul>
 <details>
 <summary>
 <code>results.txt</code>, from
